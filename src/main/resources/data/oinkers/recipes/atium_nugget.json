@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "oinkers:atium_gem"
+		}
+	],
+	"result": {
+		"item": "oinkers:atium_nugget",
+		"count": 9
+	}
+}

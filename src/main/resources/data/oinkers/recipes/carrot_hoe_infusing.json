@@ -1,0 +1,24 @@
+{
+	"type": "oinkers:carrot_infusing",
+	"ingredients":[
+		{
+			"item": "oinkers:atium_hoe"
+			
+		},
+		{
+			"item": "oinkers:carrot_ingot"
+		},
+		{
+			"item": "oinkers:carrot_ingot"
+		},
+		{
+			"item": "oinkers:carrot_ingot"
+		},
+		{
+			"item": "oinkers:carrot_ingot"
+		}
+	],
+	"output":{
+		"item": "oinkers:carrot_hoe"
+	}
+}

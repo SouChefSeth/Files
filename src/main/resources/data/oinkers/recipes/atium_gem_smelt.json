@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "oinkers:atium_ore"
+  },
+  "result": "oinkers:atium_gem",
+  "experience": 0.4,
+  "cookingtime": 240
+}

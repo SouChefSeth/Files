@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"AAA",
+		"AAA",
+		"AAA"
+	],
+	"key": {
+		"A": {
+			"item": "oinkers:atium_nugget"
+		}
+	},
+	"result": {
+		"item": "oinkers:atium_gem",
+		"count": 1
+	}
+}
