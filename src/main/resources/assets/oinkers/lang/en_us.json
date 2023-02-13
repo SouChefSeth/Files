@@ -1,0 +1,56 @@
+{
+	"biome.oinkers.carrot_land": "Carrot_land",
+	
+	"item.oinkers.carrot_shank": "Carrot Shank" ,
+	"itemGroup.oinkers": "Oinkers",
+	"item.oinkers.stone_carrot": "Stone Carrot",
+	"item.oinkers.iron_carrot": "Iron Carrot",
+	"item.oinkers.gold_carrot": "Gold Carrot",
+	"item.oinkers.diamond_carrot": "Diamond Carrot",
+	"item.oinkers.pig_juice_bucket": "Pig Juice Bucket",
+	
+	"block.oinkers.carrot_forge": "Carrot Forge",
+	"block.oinkers.carrot_infusing_station": "Carrot Infuser",
+	"block.oinkers.carrot_grass": "Carrot Grass",
+	"block.oinkers.carrot_dirt": "Carrot Dirt",
+	"block.oinkers.carrot_stone": "Carrot Stone",
+	"block.oinkers.carrot_log": "Carrot Log",
+  	"block.oinkers.carrot_planks": "Carrot Planks",
+	"block.oinkers.carrot_wood": "Carrot Wood",
+	"block.oinkers.stripped_carrot_log": "Stripped Carrot Log",
+	"block.oinkers.stripped_carrot_wood": "Stripped Carrot Wood",
+	"block.oinkers.carrot_leaves": "Carrot Leaves",
+	"block.oinkers.carrot_sapling": "Carrot Sapling",
+	
+	// Atium Stuff below
+	
+	"block.oinkers.atium_ore": "Atium Ore",
+	
+	"item.oinkers.atium_gem": "Atium Gemstone",
+	"item.oinkers.atium_nugget": "Atium Nugget",
+	
+	
+	"item.oinkers.carrot_shard": "Carrotanium Shard",
+	"item.oinkers.carrot_ingot": "Carrotanium Ingot",
+	"block.oinkers.carrot_block": "Carrotanium Block",
+	
+	"item.oinkers.carrot_sword": "Carrotanium Blade",
+	"item.oinkers.carrot_pick": "Carrotanium Pickaxe",
+	"item.oinkers.carrot_shovel": "Carrotanium Shovel",
+	"item.oinkers.carrot_axe": "Carrotanium Axe",
+	"item.oinkers.carrot_hoe": "Carrotanium Hoe",
+	
+	"effect.oinkers.carrot_thirst":	"Thirst of Carrot",
+	
+	"item.oinkers.carrot_helmet": "Carrotanium Helm",
+	"item.oinkers.carrot_chest": "Carrotanium Chestplate",
+	"item.oinkers.carrot_legs": "Carrotanium Leggings",
+	"item.oinkers.carrot_boots": "Carrotanium Boots",
+	
+	"item.oinkers.wiggler_spawn_egg": "Wiggler Spawn Egg",
+	
+	"enchantment.oinkers.absorption": "Carrot's Absorption",
+	"enchantment.oinkers.speed": "Carrot's Speed",
+	"enchantment.oinkers.strength": "Carrot's Strength"
+	
+}
