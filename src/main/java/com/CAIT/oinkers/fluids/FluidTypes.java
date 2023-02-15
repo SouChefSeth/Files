@@ -24,20 +24,21 @@ public class FluidTypes {
 	public static final RegistryObject<FluidType> PIG_JUICE_FLUID_TYPE = register("pig_juice_fluid", 
 			FluidType.Properties.create()
 			.lightLevel(1)
-			.density(15)
-			.viscosity(10)
+			.density(1)
+			.viscosity(1)
 			.canHydrate(true)
-			.canExtinguish(true)
+			.canExtinguish(false)
 			.canSwim(true)
-			.canPushEntity(true)
-			.sound(SoundAction.get("drink"), SoundEvents.HONEY_DRINK)
+			.canPushEntity(false)
+			.supportsBoating(false)
+			.sound(SoundAction.get("drink"), SoundEvents.WITCH_DRINK)
 			);
-	
+
 	private static RegistryObject<FluidType> register(String name, FluidType.Properties properties){
 		return FLUID_TYPES.register(name, () -> new BaseFluidTypes(WATER_STILL_RL, WATER_FLOWING_RL, PIG_OVERLAY_RL,
-				0xff86d2, new Vector3f(255f/255f, 134f/255f, 210f/255f), properties));
+				0xff86d2, new Vector3f(254/255f, 201/255f, 112/255f), properties));
 	}
-	
+
 	public static void register(IEventBus bus) {
 		FLUID_TYPES.register(bus);
 	}

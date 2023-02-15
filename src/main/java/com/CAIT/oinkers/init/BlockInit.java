@@ -5,7 +5,11 @@ import java.util.function.Function;
 import com.CAIT.oinkers.oinkers;
 import com.CAIT.oinkers.block.custom.CarrotForgeBlock;
 import com.CAIT.oinkers.block.custom.CarrotInfusingStationBlock;
+import com.CAIT.oinkers.block.custom.DiamondCarrotBlock;
+import com.CAIT.oinkers.block.custom.GoldCarrotBlock;
+import com.CAIT.oinkers.block.custom.IronCarrotBlock;
 import com.CAIT.oinkers.block.custom.ModFlammableRotatedPillarBlock;
+import com.CAIT.oinkers.block.custom.StoneCarrotBlock;
 import com.CAIT.oinkers.world.feature.tree.CarrotTreeGrower;
 import com.google.common.base.Supplier;
 
@@ -16,6 +20,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FarmBlock;
+import net.minecraft.world.level.block.GrassBlock;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.SaplingBlock;
@@ -34,7 +40,7 @@ public class BlockInit {
 	public static final DeferredRegister<Item> ITEMS = ItemInit.ITEMS;
 	
 	
-	public static final RegistryObject<Block> CARROT_GRASS = register("carrot_grass", () -> new Block
+	public static final RegistryObject<Block> CARROT_GRASS = register("carrot_grass", () -> new GrassBlock
 			(BlockBehaviour.Properties.of(
 					Material.DIRT, 
 					MaterialColor.COLOR_BROWN)
@@ -53,9 +59,17 @@ public class BlockInit {
 					), 
 					object -> () -> new BlockItem(object.get(), new Item.Properties().tab(oinkers.TAB)));
 	
+	public static final RegistryObject<FarmBlock> CARROT_FARMLAND = register("carrot_farmland", () -> new FarmBlock(
+			BlockBehaviour.Properties.copy(Blocks.FARMLAND)),
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(oinkers.TAB)));
+	
 	
 	public static final RegistryObject<Block> CARROT_STONE = register("carrot_stone", () -> new Block
 			(BlockBehaviour.Properties.copy(Blocks.STONE)), 
+					object -> () -> new BlockItem(object.get(), new Item.Properties().tab(oinkers.TAB)));
+	
+	public static final RegistryObject<Block> CARROT_COBBLESTONE = register("carrot_cobblestone", 
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)), 
 					object -> () -> new BlockItem(object.get(), new Item.Properties().tab(oinkers.TAB)));
 		
 	
@@ -139,6 +153,12 @@ public class BlockInit {
 	public static final RegistryObject<Block> ATIUM_ORE = register("atium_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE).requiresCorrectToolForDrops()), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(oinkers.TAB)));
 	
+	public static final RegistryObject<Block> ATIUM_BLOCK = register("atium_block", () -> new Block(BlockBehaviour.Properties.of(
+			Material.METAL,
+			MaterialColor.COLOR_LIGHT_BLUE)
+			.strength(5)), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(oinkers.TAB)));
+	
 	
 	// Custom Entity Block
 	public static final RegistryObject<Block> CARROT_INFUSING_STATION = register("carrot_infusing_station", 
@@ -156,10 +176,25 @@ public class BlockInit {
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(oinkers.TAB)));
 	
 	
+	// Carrot Crops
+	
+	public static final RegistryObject<Block> STONE_CARROT_PLANT = registerBlockWithoutBlockItem("stone_carrot_plant",
+            () -> new StoneCarrotBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS).noOcclusion()));
+    public static final RegistryObject<Block> IRON_CARROT_PLANT = registerBlockWithoutBlockItem("iron_carrot_plant",
+            () -> new IronCarrotBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS).noOcclusion()));
+    public static final RegistryObject<Block> GOLD_CARROT_PLANT = registerBlockWithoutBlockItem("gold_carrot_plant",
+            () -> new GoldCarrotBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS).noOcclusion()));
+    public static final RegistryObject<Block> DIAMOND_CARROT_PLANT = registerBlockWithoutBlockItem("diamond_carrot_plant",
+            () -> new DiamondCarrotBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS).noOcclusion()));
 	
 	
 	
 	
+    private static <T extends Block> RegistryObject<T> registerBlockWithoutBlockItem(String name, Supplier<T> block) {
+        return BLOCKS.register(name, block);
+    }
+    
+    
 	private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<? extends T> block) {
 		return BLOCKS.register(name, block);
 	}

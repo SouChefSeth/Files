@@ -1,6 +1,7 @@
 package com.CAIT.oinkers.init;
 
 import com.CAIT.oinkers.oinkers;
+import com.CAIT.oinkers.entity.custom.FlyingBoatEntity;
 import com.CAIT.oinkers.entity.custom.WigglerEntity;
 
 import net.minecraft.resources.ResourceLocation;
@@ -19,6 +20,11 @@ public class ModEntityTypes {
 			() -> EntityType.Builder.of(WigglerEntity::new, MobCategory.CREATURE)
 			.sized(1f, 2.4f)
 			.build(new ResourceLocation(oinkers.MOD_ID, "wiggler").toString()));
+	
+	public static final RegistryObject<EntityType<FlyingBoatEntity>> FLYING_BOAT =
+            ENTITY_TYPES.register("flying_boat", 
+            		() -> EntityType.Builder.<FlyingBoatEntity>of(FlyingBoatEntity::new, MobCategory.MISC)
+            		.sized(1.375f, 0.5625f).build(new ResourceLocation(oinkers.MOD_ID, "flying_boat").toString()));
 	
 	public static void register(IEventBus bus) {
 		ENTITY_TYPES.register(bus);

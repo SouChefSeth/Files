@@ -117,7 +117,4 @@ public class CarrotForgeBlock extends BaseEntityBlock{
 		// TODO Auto-generated method stub
 		return createTickerHelper(type, ModBlockEntitiesTypes.CARROT_FORGE.get(), CarrotForgeBlockEntity::tick);
 	}
-	
-	
-
 }

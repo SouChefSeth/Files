@@ -6,14 +6,16 @@ import com.CAIT.oinkers.entity.client.WigglerRenderer;
 import com.CAIT.oinkers.fluids.FluidTypes;
 import com.CAIT.oinkers.init.BiomeInit;
 import com.CAIT.oinkers.init.BlockInit;
+import com.CAIT.oinkers.init.BoatClient;
+import com.CAIT.oinkers.init.EnchantmentsInit;
 import com.CAIT.oinkers.init.EventHandler;
 import com.CAIT.oinkers.init.FluidInit;
 import com.CAIT.oinkers.init.ItemInit;
 import com.CAIT.oinkers.init.ModEffectsInit;
 import com.CAIT.oinkers.init.ModEntityTypes;
-import com.CAIT.oinkers.init.EnchantmentsInit;
 import com.CAIT.oinkers.init.TagInit;
 import com.CAIT.oinkers.recipe.ModRecipes;
+import com.CAIT.oinkers.screen.CarrotForgeScreen;
 import com.CAIT.oinkers.screen.CarrotInfuserScreen;
 import com.CAIT.oinkers.screen.ModMenuTypes;
 import com.CAIT.oinkers.world.dimension.ModDimensions;
@@ -28,8 +30,10 @@ import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -53,6 +57,7 @@ public class oinkers {
 	
 	public static oinkers instance;
 	
+	@SuppressWarnings("deprecation")
 	public oinkers() {
 		
 		instance = this;
@@ -84,6 +89,11 @@ public class oinkers {
 		ModEffectsInit.register(bus);
 		EnchantmentsInit.register(bus);
 		
+		DistExecutor.runWhenOn(
+        		Dist.CLIENT, () -> () -> FMLJavaModLoadingContext.get().getModEventBus().addListener(BoatClient::boatClientOne));
+        	DistExecutor.runWhenOn(
+        		Dist.CLIENT, () -> () -> FMLJavaModLoadingContext.get().getModEventBus().addListener(BoatClient::boatClientTwo));
+		
 		
 		MinecraftForge.EVENT_BUS.register(new EventHandler());
 		MinecraftForge.EVENT_BUS.register(this);
@@ -99,11 +109,17 @@ public class oinkers {
 		);
 	}
 	
+	@SuppressWarnings("removal")
 	private void clientSetup(final FMLClientSetupEvent event) {
 		EntityRenderers.register(ModEntityTypes.WIGGLER.get(), WigglerRenderer::new);
 		ItemBlockRenderTypes.setRenderLayer(FluidInit.PIG_JUICE.get(), RenderType.translucent());
 		ItemBlockRenderTypes.setRenderLayer(FluidInit.FLOWING_PIG_JUICE.get(), RenderType.translucent());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.STONE_CARROT_PLANT.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.IRON_CARROT_PLANT.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.GOLD_CARROT_PLANT.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.DIAMOND_CARROT_PLANT.get(), RenderType.cutout());
 		MenuScreens.register(ModMenuTypes.CARROT_INFUSER_MENU.get(), CarrotInfuserScreen::new);
+		MenuScreens.register(ModMenuTypes.CARROT_FORGE_MENU.get(), CarrotForgeScreen::new);
 		
 	}
 	

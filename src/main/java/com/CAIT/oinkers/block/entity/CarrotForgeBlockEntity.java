@@ -5,7 +5,7 @@ import java.util.Optional;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import com.CAIT.oinkers.recipe.CarrotInfuserRecipe;
+import com.CAIT.oinkers.recipe.CarrotForgeRecipe;
 import com.CAIT.oinkers.screen.CarrotForgeMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -66,7 +66,7 @@ public class CarrotForgeBlockEntity extends BlockEntity implements MenuProvider{
 			@Override
 			public int getCount() {
 				// TODO Auto-generated method stub
-				return 6;
+				return 3;
 			}
 		};
 		// TODO Auto-generated constructor stub
@@ -160,16 +160,12 @@ public class CarrotForgeBlockEntity extends BlockEntity implements MenuProvider{
 			inventory.setItem(i, pEntity.itemHandler.getStackInSlot(i));
 		}
 		
-		Optional<CarrotInfuserRecipe> recipe = level.getRecipeManager().getRecipeFor(CarrotInfuserRecipe.Type.INSTANCE,inventory , level);
+		Optional<CarrotForgeRecipe> recipe = level.getRecipeManager().getRecipeFor(CarrotForgeRecipe.Type.INSTANCE,inventory , level);
 		
 		if(hasRecipe(pEntity)) {
-			if(pEntity.itemHandler.getStackInSlot(5).isEmpty()) {
-				pEntity.itemHandler.extractItem(0, 1, false);
+			if(pEntity.itemHandler.getStackInSlot(2).isEmpty()) {
 				pEntity.itemHandler.extractItem(1, 1, false);
-				pEntity.itemHandler.extractItem(2, 1, false);
-				pEntity.itemHandler.extractItem(3, 1, false);
-				pEntity.itemHandler.extractItem(4, 1, false);
-				pEntity.itemHandler.setStackInSlot(5, new ItemStack(recipe.get().getResultItem().getItem()));
+				pEntity.itemHandler.setStackInSlot(2, new ItemStack(recipe.get().getResultItem().getItem()));
 			
 				pEntity.resetProgress();			
 			}
@@ -183,20 +179,21 @@ public class CarrotForgeBlockEntity extends BlockEntity implements MenuProvider{
 		for(int i = 0; i < pEntity.itemHandler.getSlots(); i++) {
 			inventory.setItem(i, pEntity.itemHandler.getStackInSlot(i));
 		}
+
+		Optional<CarrotForgeRecipe> recipe = level.getRecipeManager().getRecipeFor(CarrotForgeRecipe.Type.INSTANCE,inventory , level);
 		
-		Optional<CarrotInfuserRecipe> recipe = level.getRecipeManager().getRecipeFor(CarrotInfuserRecipe.Type.INSTANCE,inventory , level);
-		
-		return true;
+		return recipe.isPresent() && canInsertAmountIntoOutput(inventory) &&
+				canInsertItemIntoOutputSlot(inventory, recipe.get().getResultItem());
 	}
 
 	private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack itemStack) {
 		
-		return inventory.getItem(6).getItem() == itemStack.getItem() || inventory.getItem(6).isEmpty();
+		return inventory.getItem(3).getItem() == itemStack.getItem() || inventory.getItem(3).isEmpty();
 	}
 
 	private static boolean canInsertAmountIntoOutput(SimpleContainer inventory) {
 		
-		return inventory.getItem(6).getMaxStackSize() > inventory.getItem(6).getCount();
+		return inventory.getItem(3).getMaxStackSize() > inventory.getItem(3).getCount();
 	}
 
 }

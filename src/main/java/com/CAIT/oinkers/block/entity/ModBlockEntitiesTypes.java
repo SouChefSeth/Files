@@ -22,7 +22,7 @@ public class ModBlockEntitiesTypes {
 	public static final RegistryObject<BlockEntityType<CarrotForgeBlockEntity>> CARROT_FORGE =
 			BLOCK_ENTITY_TYPES.register("carrot_forge", 
 					()-> BlockEntityType.Builder.of(CarrotForgeBlockEntity::new, 
-							BlockInit.CARROT_INFUSING_STATION.get()).build(null));
+							BlockInit.CARROT_FORGE.get()).build(null));
 	
 	public static void register(IEventBus bus) {
 		BLOCK_ENTITY_TYPES.register(bus);

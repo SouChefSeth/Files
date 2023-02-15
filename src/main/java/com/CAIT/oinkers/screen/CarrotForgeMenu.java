@@ -25,12 +25,12 @@ public class CarrotForgeMenu extends AbstractContainerMenu{
 	private final ContainerData data;
 
 	public CarrotForgeMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-		this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(6));
+		this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(3));
 	}
 	
 	public CarrotForgeMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
 		super(ModMenuTypes.CARROT_FORGE_MENU.get(), id);
-		checkContainerSize(inv, 6);
+		checkContainerSize(inv, 3);
 		blockEntity = (CarrotForgeBlockEntity) entity;
 		this.level = inv.player.level;
 		this.data = data;
@@ -39,12 +39,9 @@ public class CarrotForgeMenu extends AbstractContainerMenu{
 		addPlayerHotbar(inv);
 		
 		this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
-            this.addSlot(new SlotItemHandler(handler, 0, 56, 36));
+            this.addSlot(new SlotItemHandler(handler, 0, 12, 15));
             this.addSlot(new SlotItemHandler(handler, 1, 86, 15));
             this.addSlot(new SlotItemHandler(handler, 2, 86, 60));
-            this.addSlot(new SlotItemHandler(handler, 3, 28, 15));
-            this.addSlot(new SlotItemHandler(handler, 4, 28, 60));
-            this.addSlot(new SlotItemHandler(handler, 5, 137, 36));
         });
 		
 		addDataSlots(data);
@@ -79,7 +76,7 @@ public class CarrotForgeMenu extends AbstractContainerMenu{
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
     // THIS YOU HAVE TO DEFINE!
-    private static final int TE_INVENTORY_SLOT_COUNT = 6;  // must be the number of slots you have!
+    private static final int TE_INVENTORY_SLOT_COUNT = 3;  // must be the number of slots you have!
 
     @Override
     public ItemStack quickMoveStack(Player playerIn, int index) {

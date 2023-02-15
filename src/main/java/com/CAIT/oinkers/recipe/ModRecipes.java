@@ -15,6 +15,9 @@ public class ModRecipes {
 	
 	public static final RegistryObject<RecipeSerializer<CarrotInfuserRecipe>> CARROT_INFUSING_SERIALIZER =
 			SERIALIZERS.register("carrot_infusing", () -> CarrotInfuserRecipe.Serializer.INSTANCE);
+	
+	public static final RegistryObject<RecipeSerializer<CarrotForgeRecipe>> CARROT_FORGING_SERIALIZER =
+			SERIALIZERS.register("carrot_forging", () -> CarrotForgeRecipe.Serializer.INSTANCE);
 
 	
 	public static void register(IEventBus bus) {

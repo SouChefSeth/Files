@@ -41,7 +41,7 @@ public class CarrotForgeScreen extends AbstractContainerScreen<CarrotForgeMenu>{
 	
 	private void renderProgressArrow(PoseStack pPoseStack, int x, int y) {
         if(menu.isCrafting()) {
-            blit(pPoseStack, x + 105, y + 44, 177, 3, menu.getScaledProgress(), 26);
+            blit(pPoseStack, x + 105, y + 44, 177, 3, 26, menu.getScaledProgress());
         }
     }
 	
