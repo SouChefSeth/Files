@@ -1,6 +1,11 @@
 {
+	// Biomes
+
 	"biome.oinkers.carrot_land": "Carrot_land",
 	
+	// Items
+	
+	"item.oinkers.flying_boat_item": "Flying Boat",
 	"item.oinkers.carrot_shank": "Carrot Shank" ,
 	"itemGroup.oinkers": "Oinkers",
 	"item.oinkers.stone_carrot": "Stone Carrot",
@@ -9,6 +14,13 @@
 	"item.oinkers.diamond_carrot": "Diamond Carrot",
 	"item.oinkers.pig_juice_bucket": "Pig Juice Bucket",
 	
+	// Blocks
+	
+	"block.oinkers.stone_carrot_plant": "Stone Carrot Plant",
+	"block.oinkers.iron_carrot_plant": "Iron Carrot Plant",
+	"block.oinkers.gold_carrot_plant": "Gold Carrot Plant",
+	"block.oinkers.diamond_carrot_plant": "Diamond Carrot Plant",
+	"block.oinkers.carrot_cobblestone": "Carrot Cobblestone",
 	"block.oinkers.carrot_forge": "Carrot Forge",
 	"block.oinkers.carrot_infusing_station": "Carrot Infuser",
 	"block.oinkers.carrot_grass": "Carrot Grass",
@@ -28,7 +40,25 @@
 	
 	"item.oinkers.atium_gem": "Atium Gemstone",
 	"item.oinkers.atium_nugget": "Atium Nugget",
+	"block.oinkers.atium_block": "Atium Block",
+
+	"item.oinkers.atium_sword": "Atium Blade",
+	"item.oinkers.atium_pick": "Atium Pickaxe",
+	"item.oinkers.atium_shovel": "Atium Shovel",
+	"item.oinkers.atium_axe": "Atium Axe",
+	"item.oinkers.atium_hoe": "Atium Hoe",
+	"item.oinkers.atium_rod_of_light": "Atium Rod of Light",
+	"item.oinkers.atium_rod_of_fire": "Atium Rod of Fire",
+	"item.oinkers.atium_rod_of_spring": "Atium Rod of Spring",
+
+	"item.oinkers.atium_helmet": "Atium Helm",
+	"item.oinkers.atium_chest": "Atium Chestplate",
+	"item.oinkers.atium_legs": "Atium Leggings",
+	"item.oinkers.atium_boots": "Atium Boots",
+	"item.oinkers.levitating_boots": "Boots of Levitation",
 	
+	
+	// Carrotanium Items Below
 	
 	"item.oinkers.carrot_shard": "Carrotanium Shard",
 	"item.oinkers.carrot_ingot": "Carrotanium Ingot",
@@ -42,13 +72,21 @@
 	
 	"effect.oinkers.carrot_thirst":	"Thirst of Carrot",
 	
-	"item.oinkers.carrot_helmet": "Carrotanium Helm",
+	"item.oinkers.carrot_helmet": "Carrotanium Helmet",
 	"item.oinkers.carrot_chest": "Carrotanium Chestplate",
 	"item.oinkers.carrot_legs": "Carrotanium Leggings",
 	"item.oinkers.carrot_boots": "Carrotanium Boots",
 	
+	// Entity Spawn Eggs
+	
 	"item.oinkers.wiggler_spawn_egg": "Wiggler Spawn Egg",
 	
+	// Enchants
+	
+	
+	"enchantment.oinkers.atium_light": "Atium's Light",
+	"enchantment.oinkers.atium_fire": "Atium's Fire",
+	"enchantment.oinkers.atium_spring": "Atium's Spring",
 	"enchantment.oinkers.absorption": "Carrot's Absorption",
 	"enchantment.oinkers.speed": "Carrot's Speed",
 	"enchantment.oinkers.strength": "Carrot's Strength"
