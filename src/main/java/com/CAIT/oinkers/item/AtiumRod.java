@@ -113,7 +113,7 @@ public class AtiumRod extends SwordItem {
 		            double d2 = pos.getX() - (player.getX() + vec3.x * 4.0D);
 		            double d3 = pos.getY() - (0.5D + player.getY());
 		            double d4 = pos.getZ() - (player.getZ() + vec3.z * 4.0D);
-		            LargeFireball largefireball = new LargeFireball(level, player, d2, d3, d4, 50);
+		            LargeFireball largefireball = new LargeFireball(level, player, d2, d3, d4, 3);
 		            largefireball.setPos(player.getX() + vec3.x * 4.0D, player.getY() + 0.5D, largefireball.getZ() + vec3.z * 4.0D);
 		            level.addFreshEntity(largefireball);
 		            level.addFreshEntity(largefireball);

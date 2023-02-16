@@ -28,7 +28,12 @@ public class WigglerRenderer extends GeoEntityRenderer<WigglerEntity>{
 	@Override
 	public RenderType getRenderType(WigglerEntity animatable, float partialTick, PoseStack poseStack,
 			MultiBufferSource bufferSource, VertexConsumer buffer, int packedLight, ResourceLocation texture) {
-		poseStack.scale(3.2f, 3.2f, 3.2f);	// Scale model
+		if (animatable.isBaby()) {
+			poseStack.scale(2f, 1.5f, 1.5f);
+		}
+		else {
+			poseStack.scale(3.2f, 3.2f, 3.2f);	// Scale model
+		}
 		return super.getRenderType(animatable, partialTick, poseStack, bufferSource, buffer, packedLight, texture);
 	}
 
